@@ -1,0 +1,51 @@
+@media only screen and  (min-width:300px) and ( max-width: 700px) {
+    * {
+      margin-left: 0px!important;
+      width:100%
+
+    }
+    .btnnavbar{
+      width:55px!important;
+      margin-right: 20px!important;
+    }
+    
+    .row{
+        margin-left: 0%!important;
+        margin-right: 0%!important;
+        /* padding-right: 0%!important; */
+        padding-left: 0%!important;
+        width: 100%;
+        margin-top: 0%!important;
+
+    }
+    .addblog{
+       width: 100%!important;
+    }
+    .autoblogspan{
+      display:none
+    }
+    .autoblog-row{
+    margin-top: 0px;
+    }
+    .timeautoblog{
+      margin-top: 10px;
+    }
+    .addblogtd{
+      width: 100% !important;
+    }
+    .collapsed{
+      width: 55px!important;
+    }
+    
+    
+  }
+  @media only screen and (min-width: 700px) and (max-width: 900px) {
+    .row{
+      margin-left: 80px;
+    }
+  }
+ 
+  
+
+
+  

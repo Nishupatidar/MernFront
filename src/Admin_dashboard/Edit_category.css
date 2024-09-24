@@ -1,0 +1,32 @@
+.showdata{
+    position: fixed;
+    background-color: rgb(1, 1, 1);
+    opacity: .5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+}
+.showbox{
+    width: 330px;
+    height: 330px;
+    background-color: white;
+    /* text-align: center; */
+    border-radius: 10px;
+    /* border: 2px solid black; */
+}
+.showbox .cros{
+    font-size: 30px;
+    margin-left: 240px;
+    color: white;
+    background-color: black;
+    padding: 0px 16px 7px 16px;
+    border-radius: 50%;
+}
+.showbox h4{
+    margin-top: 10px;
+}
