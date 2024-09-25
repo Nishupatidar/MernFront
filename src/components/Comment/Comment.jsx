@@ -10,7 +10,7 @@ const Comment = () => {
   const [showcomment, setshowcomment] = useState([])
   useEffect(() => {
     try {
-      axios.get('http://localhost:4000/comment').then((res) => {
+      axios.get('https://mernblog-5-56r6.onrender.com/comment').then((res) => {
         setshowcomment(res.data.comment)
       })
     }
@@ -40,7 +40,7 @@ const Comment = () => {
       e.preventDefault()
       if (captchaValue != null) {
 
-        let res = await axios.post("http://localhost:4000/commentblog", comments)
+        let res = await axios.post("https://mernblog-5-56r6.onrender.com/commentblog", comments)
         console.log(res)
         if (res.data.success == true) {
           alert(res.data.message)
@@ -95,7 +95,7 @@ const Comment = () => {
   const submitreply = async(id)=>{
 try{
 if (captchaValue != null) {
-const res =  await axios.post('http://localhost:4000/replycomment',{
+const res =  await axios.post('https://mernblog-5-56r6.onrender.com/replycomment',{
   "rcomments": rcomments,
   "rid":id
 })
@@ -121,7 +121,7 @@ catch(error){
   }
   const [replycomment,setreplycomment] = useState([])
   useEffect(()=>{
-    axios.get("http://localhost:4000/reply").then((res)=>{
+    axios.get("https://mernblog-5-56r6.onrender.com/reply").then((res)=>{
       setreplycomment(res.data.reply)
   })
   },[replycomment])

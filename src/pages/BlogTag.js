@@ -16,7 +16,7 @@ const BlogTag = () => {
     console.log(xid)
     const[tags,settags] = useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:4000/tag/${xid.tid}`).then((res)=>{
+        axios.get(`https://mernblog-5-56r6.onrender.com/tag/${xid.tid}`).then((res)=>{
             settags(res.data.alltages)
 
         })

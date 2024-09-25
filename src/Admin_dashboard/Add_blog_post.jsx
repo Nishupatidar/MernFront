@@ -53,7 +53,7 @@ function Add_blog_post() {
 
   useEffect(() => {
     try {
-      axios.get('http://localhost:4000/categories').then((res) => {
+      axios.get('https://mernblog-5-56r6.onrender.com/categories').then((res) => {
         setcategory(res.data.Categories)
       }).then((data) => {
         const userData = data.map((item) => ({
@@ -72,7 +72,7 @@ function Add_blog_post() {
   }, [])
   useEffect(() => {
     try {
-      axios.get('http://localhost:4000/blog', {
+      axios.get('https://mernblog-5-56r6.onrender.com/blog', {
         headers: {
           "Authorization": 'Bearer ' + localStorage.getItem("token")
         }
@@ -230,7 +230,7 @@ function Add_blog_post() {
       form_data.append(`images`, placeholderImage);
       }
       console.log(form_data.get("images"))
-      axios.post('http://localhost:4000/addblog', form_data).then((res)=>{
+      axios.post('https://mernblog-5-56r6.onrender.com/addblog', form_data).then((res)=>{
 
         if (res.data.success) {
           setaddblog({ 
@@ -273,7 +273,7 @@ function Add_blog_post() {
   };
   const deleteblog = async (did) => {
     console.log(did)
-    await axios.get(`http://localhost:4000/blogdelete/${did}`).then((res) => {
+    await axios.get(`https://mernblog-5-56r6.onrender.com/blogdelete/${did}`).then((res) => {
       toast.error(res.data.message)
     })
   }
@@ -287,7 +287,7 @@ function Add_blog_post() {
     // console.log(id)
     console.log(id, isActive)
     try {
-      const response = await axios.put(`http://localhost:4000/updateStatus/${id}`, {
+      const response = await axios.put(`https://mernblog-5-56r6.onrender.com/updateStatus/${id}`, {
         status: isActive,
       })
       
@@ -342,9 +342,9 @@ function Add_blog_post() {
 
 
   const exportcsv = () => {
-    axios.get('http://localhost:4000/export-csv').then(({ data }) => {
+    axios.get('https://mernblog-5-56r6.onrender.com/export-csv').then(({ data }) => {
       console.log(data)
-      window.open(`http://localhost:4000${data.downloadUrl}`, 'blank')
+      window.open(`https://mernblog-5-56r6.onrender.com/${data.downloadUrl}`, 'blank')
     }).catch((error) => {
       console.log(error)
     })
@@ -400,7 +400,7 @@ function Add_blog_post() {
       form_data.append('uploadfile', csvfile.uploadfile, csvfile.uploadfile.name);
 
       try {
-        const res = await axios.post('http://localhost:4000/filesave', form_data);
+        const res = await axios.post('https://mernblog-5-56r6.onrender.com/filesave', form_data);
 
         if (res.data.success) {
          toast.success(res.data.message);

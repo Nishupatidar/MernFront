@@ -17,7 +17,7 @@ const BlogCategories = () => {
     // console.log(slug)
     const [categories,setcategories] = useState([])
     useEffect(()=>{
-        axios.get(`http://localhost:4000/allcategory/${xid.cid}`)
+        axios.get(`https://mernblog-5-56r6.onrender.com/allcategory/${xid.cid}`)
         .then((res)=>{
             // console.log(res.data.Categories)
             setcategories(res.data.Categories)

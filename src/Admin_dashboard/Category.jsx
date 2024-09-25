@@ -35,7 +35,7 @@ function Category() {
     // // alert("category_name empty")
     //         }
     // else{
-    axios.post("http://localhost:4000/category", category).then((res) => {
+    axios.post("https://mernblog-5-56r6.onrender.com/category", category).then((res) => {
       if (res.data.success = true) {
         toast.success(res.data.message)
         navigate('/admin/category')
@@ -58,7 +58,7 @@ function Category() {
   }
   const [showcategory, setshowcategory] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:4000/categories', {
+    axios.get('https://mernblog-5-56r6.onrender.com/categories', {
       headers: {
         "Authorization": 'Bearer ' + localStorage.getItem("token")
       }
@@ -74,7 +74,7 @@ function Category() {
   }, [showcategory])
 
   const deletecategory = (id) => {
-    axios.get(`http://localhost:4000/categorydelete/${id}`).then((res) => {
+    axios.get(`https://mernblog-5-56r6.onrender.com/categorydelete/${id}`).then((res) => {
 
       if (res.data.success === true) {
         toast.error(res.data.message)
@@ -130,7 +130,7 @@ function Category() {
     // console.log(id)
     console.log(id, isActive)
     try {
-      const response = await axios.put(`http://localhost:4000/categorupdateStatus/${id}`, {
+      const response = await axios.put(`https://mernblog-5-56r6.onrender.com/categorupdateStatus/${id}`, {
         status: isActive,
       });
 
@@ -170,7 +170,7 @@ function Category() {
       try {
 
 
-        let res = await axios.post('http://localhost:4000/categoryfilesave', form_data)
+        let res = await axios.post('https://mernblog-5-56r6.onrender.com/categoryfilesave', form_data)
         if (res.data.success) {
           toast.success(res.data.message)
         }

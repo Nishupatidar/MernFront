@@ -43,7 +43,7 @@ function App() {
   }, [])
   const [blogPosts, setBlogPosts] = useState([]);
   useEffect(() => {
-    axios.get('http://localhost:4000/blog')
+    axios.get('https://mernblog-5-56r6.onrender.com/blog')
       .then(response => setBlogPosts(response.data.blog))
       .catch(error => console.error('Error fetching blog posts:', error));
   }, []);

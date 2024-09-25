@@ -6,7 +6,7 @@ import axios from 'axios';
 const SidebarPost = () => {
     const [blogtag,setblogtag] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:4000/blog').then((res)=>{
+        axios.get('https://mernblog-5-56r6.onrender.com/blog').then((res)=>{
             // console.log(res.data.blog)
 setblogtag(res.data.blog)
         })

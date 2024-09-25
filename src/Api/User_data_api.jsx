@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 
 const User_data_api = () => {
     useEffect(()=>{
-        axios.get('http://localhost:4000/userdata').then((res)=>{
+        axios.get('https://mernblog-5-56r6.onrender.com/userdata').then((res)=>{
             console.log(res.data.apidata)
         })
     })

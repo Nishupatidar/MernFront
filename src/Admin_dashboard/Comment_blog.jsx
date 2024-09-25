@@ -21,7 +21,7 @@ function Comment_blog() {
   });
   useEffect(() => {
     try {
-      axios.get("http://localhost:4000/comment").then((res) => {
+      axios.get("https://mernblog-5-56r6.onrender.com/comment").then((res) => {
         setcomments(res.data.comment)
       })
     }
@@ -38,7 +38,7 @@ function Comment_blog() {
   const deletecomment = (did) => {
     try {
 
-      axios.get(`http://localhost:4000/commentdelete/${did}`).then((res) => {
+      axios.get(`https://mernblog-5-56r6.onrender.com/commentdelete/${did}`).then((res) => {
         if (res.data.success) {
           toast.error(res.data.message)
         }
@@ -52,7 +52,7 @@ function Comment_blog() {
   const commentedit = async (eid) => {
     try {
 
-      const res = await axios.get(`http://localhost:4000/commentedit/${eid}`)
+      const res = await axios.get(`https://mernblog-5-56r6.onrender.com/commentedit/${eid}`)
       seteditcomment(res.data.blogedit)
       setInitialAutoblog(res.data.blogedit)
     }
@@ -143,7 +143,7 @@ function Comment_blog() {
         toast.warning('No changes made. Please edit the data before saving.');
         return;
       }
-      axios.put('http://localhost:4000/commentupdate', editcomment)
+      axios.put('https://mernblog-5-56r6.onrender.com/commentupdate', editcomment)
     }
     catch (error) {
       console.log(error)
@@ -152,7 +152,7 @@ function Comment_blog() {
   const statusvalue = async (id, isActive) => {
     console.log(id, isActive)
     try {
-      const response = await axios.put(`http://localhost:4000/commentStatus/${id}`, {
+      const response = await axios.put(`https://mernblog-5-56r6.onrender.com/commentStatus/${id}`, {
         status: isActive,
         
       });

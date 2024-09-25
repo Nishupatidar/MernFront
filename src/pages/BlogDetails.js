@@ -19,7 +19,7 @@ const BlogDetails = () => {
     const blogId = parseInt(sid, 10)
     const data = BlogClassicData.filter(blog => blog.id === blogId);
     useEffect(()=>{
-        axios.get(`http://localhost:4000/singleblog/${sid}`).then((res)=>{
+        axios.get(`https://mernblog-5-56r6.onrender.com/singleblog/${sid}`).then((res)=>{
         //   console.log(res.data.singleblog.category.category_name)
           setdatas(res.data.singleblog)
         })
@@ -31,7 +31,7 @@ const BlogDetails = () => {
 //     const [blog,setblog] = useState("")
 //    //  console.log(xid)
 //     useEffect(()=>{
-//      axios.get(`http://localhost:4000/singleblog/${xid.sid}`).then((res)=>{
+//      axios.get(`https://mernblog-5-56r6.onrender.com/singleblog/${xid.sid}`).then((res)=>{
 //        console.log(res.data.singleblog)
 //        setblog(res.data.singleblog)
 //      })

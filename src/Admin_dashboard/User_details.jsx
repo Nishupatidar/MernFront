@@ -21,7 +21,7 @@ function User_details() {
         "decription":""
     })
     useEffect(() => {
-        axios.get('http://localhost:4000/userdetails',{ headers: {
+        axios.get('https://mernblog-5-56r6.onrender.com/userdetails',{ headers: {
             "Authorization": 'Bearer ' + localStorage.getItem("token")
         }
           }).then((res) => {
@@ -35,13 +35,13 @@ function User_details() {
         })
     }, [details])
     const Edituser = async (eid) => {
-        const res = await axios.get(`http://localhost:4000/useredit/${eid}`)
+        const res = await axios.get(`https://mernblog-5-56r6.onrender.com/useredit/${eid}`)
         console.log(res)
         setInitialAutoblog(res.data.useredit)
         setedituser(res.data.useredit)
     }
     const deleteUser =  (id) => {
-         axios.get(`http://localhost:4000/userdelete/${id}`).then((res)=>{
+         axios.get(`https://mernblog-5-56r6.onrender.com/userdelete/${id}`).then((res)=>{
         if (res.data.success == true) {
             toast.error(res.data.message)
         }
@@ -59,14 +59,14 @@ function User_details() {
           return;
         }
     try {
-    axios.put(`http://localhost:4000/userupdate/${edituser._id}`, edituser).then((res)=>{
+    axios.put(`https://mernblog-5-56r6.onrender.com/userupdate/${edituser._id}`, edituser).then((res)=>{
 
      
       if (res.data.success) {
         toast.success(res.data.message);
         navigate('/admin/userdetails')
         // Refresh the user details after successful update
-        // axios.get('http://localhost:4000/userdetails').then((response) => {
+        // axios.get('https://mernblog-5-56r6.onrender.com/userdetails').then((response) => {
         //   setdetails(response.data.userdetails);
         // });
       }

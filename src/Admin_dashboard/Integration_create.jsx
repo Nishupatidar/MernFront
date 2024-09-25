@@ -22,7 +22,7 @@ function Integration_create() {
     const [selectedIntegration, setSelectedIntegration] = useState(null); // State to track selected integration
 
     useEffect(() => {
-        axios.get('http://localhost:4000/integrationview')
+        axios.get('https://mernblog-5-56r6.onrender.com/integrationview')
             .then((res) => {
                 setgettitle(res.data.titlevalue);
                 if (res.data.titlevalue.length > 0) {

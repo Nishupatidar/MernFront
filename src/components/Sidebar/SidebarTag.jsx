@@ -7,7 +7,7 @@ import axios from 'axios';
 const SidebarTag = () => {
     const [allTages,setalltages] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:4000/blog').then((res)=>{
+        axios.get('https://mernblog-5-56r6.onrender.com/blog').then((res)=>{
             setalltages(res.data.blog)
         })
     })

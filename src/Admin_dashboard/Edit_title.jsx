@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
        })
     const [editblog,seteditblog] = useState('')
     useEffect(()=>{
-      axios.get(`http://localhost:4000/titleedit/${xid.eid}`).then((res)=>{
+      axios.get(`https://mernblog-5-56r6.onrender.com/titleedit/${xid.eid}`).then((res)=>{
 
           console.log(res.data.titleedits[0])
           settitles(res.data.titleedits[0])
@@ -39,7 +39,7 @@ const categoryvalue = async(e)=>{
     toast.error('No changes made. Please edit the data before saving.');
     return;
   }
-const res =   await axios.put('http://localhost:4000/updatetitle',titles)
+const res =   await axios.put('https://mernblog-5-56r6.onrender.com/updatetitle',titles)
 if(res.data.success){
   toast.success(res.data.message)
   navigate('/admin/mastertitle')

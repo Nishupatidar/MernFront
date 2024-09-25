@@ -9,7 +9,7 @@ const SEO = ({ title,description }) => {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:4000/blog')
+        axios.get('https://mernblog-5-56r6.onrender.com/blog')
             .then((res) => {
                 setBlog(res.data.blog);
             })

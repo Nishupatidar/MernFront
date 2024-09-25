@@ -11,7 +11,7 @@ const CustomForm = ({ status, message, onValidated }) =>{
     let email;
     const submit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/subscribe',subscribe)
+        axios.post('https://mernblog-5-56r6.onrender.com/subscribe',subscribe)
        
     };
     // Change Handaler

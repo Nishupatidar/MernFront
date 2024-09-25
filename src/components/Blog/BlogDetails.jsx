@@ -18,7 +18,7 @@ const BlogDetails = ({ data }) => {
    try{
    useEffect(()=>{
     setLoading(false)
-    axios.get(`http://localhost:4000/singleblog/${xid.sid}`).then((res)=>{
+    axios.get(`https://mernblog-5-56r6.onrender.com/singleblog/${xid.sid}`).then((res)=>{
         
         setblog(res.data.singleblog)
     }).finally(
@@ -35,7 +35,7 @@ catch(error){
 const [showcomment,setcomments] = useState([])
 useEffect(() => {
     try {
-      axios.get('http://localhost:4000/comment').then((res) => {
+      axios.get('https://mernblog-5-56r6.onrender.com/comment').then((res) => {
         setcomments(res.data.comment)
       })
       

@@ -21,7 +21,7 @@ const Signup = () => {
         e.preventDefault()
         if (signupvalue.password === signupvalue.confirmpwd) {
             console.log(signupvalue)
-             axios.post("http://localhost:4000/signup", signupvalue).then((res)=>{
+             axios.post("https://mernblog-5-56r6.onrender.com/signup", signupvalue).then((res)=>{
 
             
 

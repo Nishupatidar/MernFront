@@ -10,7 +10,7 @@ const SidebarCategories = () => {
 
     const navigate = useNavigate()
     useEffect(()=>{
-        axios.get('http://localhost:4000/categories').then((res)=>{
+        axios.get('https://mernblog-5-56r6.onrender.com/categories').then((res)=>{
             // console.log(res.data.Categories)
             setcategories(res.data.Categories)
     })

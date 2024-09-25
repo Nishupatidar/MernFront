@@ -16,7 +16,7 @@ const BlogItem = () => {
     useEffect(() => {
         try{
             setLoading(true);
-        axios.get('http://localhost:4000/blog').then((res) => {
+        axios.get('https://mernblog-5-56r6.onrender.com/blog').then((res) => {
             // console.log(res.data.Categories)
             setBlog(res.data.blog)
             // console.log(res.data.blog)

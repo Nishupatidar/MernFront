@@ -40,7 +40,7 @@ function Sidebar() {
   const DefaultIcon = () => <span>Default Icon</span>;
 
   useEffect(()=>{
-    axios.get("http://localhost:4000/sidebar").then((res)=>{
+    axios.get("https://mernblog-5-56r6.onrender.com/sidebar").then((res)=>{
       // console.log(res.data.sidebar)
       setsidebar(res.data.sidebar)
     })

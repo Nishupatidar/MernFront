@@ -18,7 +18,7 @@ import 'react-toastify/dist/ReactToastify.css';
   "description":""
  })
  useEffect(() => {
-   axios.get(`http://localhost:4000/categoryedit/${eid}`).then((res)=>{
+   axios.get(`https://mernblog-5-56r6.onrender.com/categoryedit/${eid}`).then((res)=>{
 
      setedit(res.data.useredit)
      setInitialAutoblog(res.data.useredit)
@@ -34,7 +34,7 @@ const categoryvalue = async(e)=>{
   toast.error('No changes made. Please edit the data before saving.');
     return;
   }
-const res =   await axios.put('http://localhost:4000/updatecategory',edit)
+const res =   await axios.put('https://mernblog-5-56r6.onrender.com/updatecategory',edit)
 if(res.data.success){
   toast.success(res.data.message)
   navigate('/admin/category')

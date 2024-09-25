@@ -10,19 +10,19 @@ import axios from 'axios'
 function Admin_dashboard() {
   const [Blog,setBlog] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:4000/blog').then((res)=>{
+    axios.get('https://mernblog-5-56r6.onrender.com/blog').then((res)=>{
       setBlog(res.data.blog)
     })
   },[Blog])
   const [Users,setUsers] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:4000/userdetails').then((res)=>{
+    axios.get('https://mernblog-5-56r6.onrender.com/userdetails').then((res)=>{
       setUsers(res.data.userdetails)
     })
   },[Users])
   const [Comment,setComment] = useState([])
   useEffect(()=>{
-    axios.get('http://localhost:4000/comment').then((res)=>{
+    axios.get('https://mernblog-5-56r6.onrender.com/comment').then((res)=>{
       setComment(res.data.comment)
     })
   },[Comment])

@@ -12,7 +12,7 @@ const BlogClassic = () => {
 
     const [categories, setcategories] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:4000/allcategory/${xid.cid}`).then((res) => {
+        axios.get(`https://mernblog-5-56r6.onrender.com/allcategory/${xid.cid}`).then((res) => {
             // console.log(res.data.allcategory)
             console.log(res.data.allcategory)
             setcategories(res.data.allcategory)
@@ -26,7 +26,7 @@ const BlogClassic = () => {
     // let xid = useParams()
     const [tags, settags] = useState([])
     useEffect(() => {
-        axios.get(`http://localhost:4000/tag/${xid.tid}`).then((res) => {
+        axios.get(`https://mernblog-5-56r6.onrender.com/tag/${xid.tid}`).then((res) => {
             // console.log(res.data.alltages)
             settags(res.data.alltages)
         })

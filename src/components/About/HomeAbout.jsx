@@ -23,7 +23,7 @@ const HomeAbout = () => {
     const [Blog,setBlog] = useState([])
     useEffect(()=>{
         try {
-            const response =  axios.get('http://localhost:4000/blog');
+            const response =  axios.get('https://mernblog-5-56r6.onrender.com/blog');
             setBlog(response.data.blog);
             console.log(response.data.blog)
         }

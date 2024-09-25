@@ -18,13 +18,13 @@ function Integration() {
     const blogsubmit = (e) => {
         e.preventDefault()
         console.log(newvalue)
-        axios.post('http://localhost:4000/integration', newvalue).then((res) => {
+        axios.post('https://mernblog-5-56r6.onrender.com/integration', newvalue).then((res) => {
 
         })
     }
     const [gettitle, setgettitle] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:4000/integrationget').then((res) => {
+        axios.get('https://mernblog-5-56r6.onrender.com/integrationget').then((res) => {
             setgettitle(res.data.Integration)
         })
 

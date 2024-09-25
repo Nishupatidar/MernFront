@@ -26,7 +26,7 @@ function Edit_blog_post() {
     const [initialAutoblog, setInitialAutoblog] = useState({});
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`http://localhost:4000/blogedit/${eid}`).then((res)=>{
+        axios.get(`https://mernblog-5-56r6.onrender.com/blogedit/${eid}`).then((res)=>{
 
           console.log(res.data.blogedit)
           setblog(res.data.blogedit)
@@ -34,7 +34,7 @@ function Edit_blog_post() {
         })
       },[eid])
       useEffect(() => {
-        axios.get('http://localhost:4000/categories').then((res) => {
+        axios.get('https://mernblog-5-56r6.onrender.com/categories').then((res) => {
           setcategory(res.data.Categories)
         })
       }, [])
@@ -130,7 +130,7 @@ function Edit_blog_post() {
     // }
     // console.log(form_data)
     
-    axios.put('http://localhost:4000/updatess', form_data).then((res)=>{
+    axios.put('https://mernblog-5-56r6.onrender.com/updatess', form_data).then((res)=>{
 
       if(res.data.success){
         toast.success(res.data.message)

@@ -15,7 +15,7 @@ import Footer from './Footer'
        })
     const [editblog,seteditblog] = useState('')
     useEffect(()=>{
-      axios.get(`http://localhost:4000/editintegration/${xid.eid}`).then((res)=>{
+      axios.get(`https://mernblog-5-56r6.onrender.com/editintegration/${xid.eid}`).then((res)=>{
 
           console.log(res.data.titleedits)
           settitles(res.data.titleedits)
@@ -31,7 +31,7 @@ const inputvalue =(e)=>{
 }
 const categoryvalue = async(e)=>{
   e.preventDefault()
-const res =   await axios.put('http://localhost:4000/updateintegration',titles)
+const res =   await axios.put('https://mernblog-5-56r6.onrender.com/updateintegration',titles)
 if(res.data.success){
   alert(res.data.message)
   navigate('/admin/integration')

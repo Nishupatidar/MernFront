@@ -12,7 +12,7 @@ function Reply_blog() {
     const [initialAutoblog, setInitialAutoblog] = useState({});
     useEffect(()=>{
         try{
-        axios.get("http://localhost:4000/reply").then((res)=>{
+        axios.get("https://mernblog-5-56r6.onrender.com/reply").then((res)=>{
             setcomments(res.data.reply)
         })
     }
@@ -22,7 +22,7 @@ function Reply_blog() {
     },[comments])
     const deletecomment = (did)=>{
         try{
-        const res = axios.get(`http://localhost:4000/replydelete/${did}`)
+        const res = axios.get(`https://mernblog-5-56r6.onrender.com/replydelete/${did}`)
         }
         catch(error){
             console.log(error)
@@ -31,7 +31,7 @@ function Reply_blog() {
     }
     const [editcomment,seteditcomment] = useState('')
     const commentedit = async(eid)=>{
-        const res = await axios.get(`http://localhost:4000/replyedit/${eid}`)
+        const res = await axios.get(`https://mernblog-5-56r6.onrender.com/replyedit/${eid}`)
         seteditcomment(res.data.blogedit)
         setInitialAutoblog(res.data.blogedit)
     }
@@ -109,12 +109,12 @@ seteditcomment({...editcomment,[event.target.name]:event.target.value})
           toast.warning('No changes made. Please edit the data before saving.');
           return;
         }
-axios.put('http://localhost:4000/replyupdate',editcomment)
+axios.put('https://mernblog-5-56r6.onrender.com/replyupdate',editcomment)
     }
     const statusvalue = async(id,isActive)=>{
         console.log(id,isActive)
         try {
-            const response = await axios.put(`http://localhost:4000/replyStatus/${id}`, {
+            const response = await axios.put(`https://mernblog-5-56r6.onrender.com/replyStatus/${id}`, {
               status: isActive,
             });
       

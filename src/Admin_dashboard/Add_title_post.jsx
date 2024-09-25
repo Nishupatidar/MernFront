@@ -29,7 +29,7 @@ function Add_title_post() {
   const blogsubmit = (e) => {
     e.preventDefault()
     // console.log(newvalue)
-    axios.post('http://localhost:4000/addtitle', newvalue).then((res) => {
+    axios.post('https://mernblog-5-56r6.onrender.com/addtitle', newvalue).then((res) => {
       if (res.data.success) {
         toast.success(res.data.message)
         navigate('/admin/mastertitle')
@@ -45,7 +45,7 @@ function Add_title_post() {
   //  ------------------------------------
   const [gettitle, setgettitle] = useState([])
   useEffect(() => {
-    axios.get('http://localhost:4000/gettitle').then((res) => {
+    axios.get('https://mernblog-5-56r6.onrender.com/gettitle').then((res) => {
       setgettitle(res.data.titlevalue)
       // filtercategory();
     })
@@ -103,7 +103,7 @@ function Add_title_post() {
     console.log(id, isActive)
     try {
       // setgettitle(gettitle.map(item => item._id === id ? { ...item, status: isActive } : item));
-      const response = await axios.put(`http://localhost:4000/updatetitleStatus/${id}`, {
+      const response = await axios.put(`https://mernblog-5-56r6.onrender.com/updatetitleStatus/${id}`, {
         status: isActive,
       });
 
@@ -117,7 +117,7 @@ function Add_title_post() {
   }
   const deleteblog = (did) => {
     console.log(did)
-    axios.get(`http://localhost:4000/titledelete/${did}`).then((res) => {
+    axios.get(`https://mernblog-5-56r6.onrender.com/titledelete/${did}`).then((res) => {
       if (res.data.success) {
         toast.error(res.data.message)
       }
@@ -145,7 +145,7 @@ function Add_title_post() {
       
     // const form_data = new FormData()
     // form_data.append("uploadfile", csvfile.uploadfile, csvfile.uploadfile.name)
-    let res = await axios.post('http://localhost:4000/mastertitlefilesave', form_data)
+    let res = await axios.post('https://mernblog-5-56r6.onrender.com/mastertitlefilesave', form_data)
     if (res.data.success == true) {
       toast.success(res.data.message)
     }
